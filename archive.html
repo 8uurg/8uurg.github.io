@@ -7,9 +7,15 @@ page: Archive
 	<div style="font-size: 64px; font-family: Arial;">Nothing to see here. Yet.</div>
 </div>-->
 <div>
-	<ul id="posts">
+<table class="ui table segment" id="projects">
+	<thead><tr>
+		<th>Name</th>
+		<th>Date</th>
+	</tr></thead>
+	<tbody>
 		{% for post in site.posts %}
 		{% include itempost.html %}
 		{% endfor %}
-	</ul>
+	</tbody>
+</table>
 </div>
