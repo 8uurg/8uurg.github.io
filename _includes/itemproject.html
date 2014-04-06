@@ -1,3 +1,16 @@
-<li>
-	<a href="{{ project.repo }}">{{ project.name }}</a>
-</li>
+<div class="column">
+	<h2 class="ui header small attached top">{{ project.name }}</h2>
+	<div class="ui segment attached bottom">
+	{% if project.desc %}
+	<div class="ui segment raised">
+		{{ project.desc }}
+	</div>
+	{% endif %}
+	{% if project.repo %}
+	<a class="ui green fluid button" href="{{ project.repo }}"><i class="icon github sign"></i>To repository</a>
+	{% endif %}
+	{% if project.site %}
+	<a class="ui fluid button" href="{{ project.site }}"><i class="icon globe"></i>To site</a>
+	{% endif %}
+	</div>
+</div>

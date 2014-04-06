@@ -6,10 +6,8 @@ page: Projects
 <!--<div style="display: flex; align-items: center; justify-content: center; text-align: center; height: 100%; width: 100%">
 	<div style="font-size: 64px; font-family: Arial;">Nothing to see here. Yet.</div>
 </div>-->
-<div>
-	<ul id="projects">
-		{% for project in site.data.projects %}
-		{% include itemproject.html %}
-		{% endfor %}
-	</ul>
+<div class="ui three column grid">
+	{% for project in site.data.projects %}
+	{% include itemproject.html %}
+	{% endfor %}
 </div>
