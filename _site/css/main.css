@@ -1,0 +1,46 @@
+html {
+	font-family: Arial;
+	min-height: 100%;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#posts {
+	margin: 0;
+	padding: 0;
+}
+
+#posts .item {
+	margin: 0;
+	display: block;
+	list-style-type: none;
+	margin-bottom: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.mainframe {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.mainrow {
+    display: table-row;
+    height: 1px;
+}
+.mainrow.expand {
+    height: auto;
+}
+
+#footer .three.column.page.grid {
+	margin-top: 10px;
+}
+
+#header h1{
+	margin-top: 10px
+}

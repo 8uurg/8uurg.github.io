@@ -1,0 +1,66 @@
+{% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+{% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+ <html>
+ <head>
+ 	<title>{{ page.title }}</title>
+ 	<link rel="stylesheet" type="text/css" href="{{ relative }}css/semantic.css">
+ 	<link rel="stylesheet" type="text/css" href="{{ relative }}css/main.css">
+ </head>
+ <body class="mainframe">
+<div id="header" class="mainrow">
+ <h1 class="ui header one column page grid">
+ 	8uurg's Blog
+ 	<div class="sub header">Random ramblings of a random person.</div>
+ </h1>
+
+<div class="ui basic segment one column page grid">
+ <div class="ui black inverted menu row">
+ 	{% for item in site.data.pages %}
+ 	<a class="item {% if page.page == item.name %}active{% endif %}" href="{{ relative }}{{ item.url }}"><i class=" {{ item.icon }} link icon"></i>{{ item.name }}</a>
+ 	{% endfor %}
+ </div>
+</div>
+</div>
+
+<div class="mainrow expand">
+<div id="container" class="ui page grid row">
+ <div class="column" id="content">
+ {{ content }}
+ </div>
+</div>
+</div>
+
+ <div id="footer" class="ui segment inverted basic mainrow">
+ <div class="ui three column page grid">
+ 	<div class="equal height row">
+ 		<div class="column">
+ 			<div class="ui fluid vertical menu inverted">
+ 				<div class="ui inverted purple header item">Posts</div>
+ 				{% for post in site.posts limit:5 %}
+ 				<a class="item" href="{{ post.url }}">{{ post.title }}</a>
+ 				{% endfor %}
+ 			</div>
+ 		</div>
+ 		<div class="column">
+ 			<div class="ui fluid vertical menu inverted">
+ 				<div class="ui inverted blue header item">Links</div>
+ 				{% for item in site.data.pages %}
+ 				<a class="ui item" href="{{ relative }}{{ item.url }}">{{ item.name }}</a>
+ 				{% endfor %}
+ 			</div>
+ 		</div>
+ 		<div class="column">
+ 			<div class="ui fluid vertical menu inverted">
+ 				<div class="ui inverted red header item">Social</div>
+ 				{% for item in site.data.social %}
+ 				<a class="item" href="{{ item.url }}"><i class="icon {{ item.icon }}"></i>{{ item.name }}</a>
+ 				{% endfor %}
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ 	<div class="ui segment inverted center aligned">Website by 8uurg.</div>
+ </div>
+ <script type="text/javascript" url="semantic.js"></script>
+ </body>
+ </html>

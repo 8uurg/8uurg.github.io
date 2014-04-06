@@ -1,15 +1,15 @@
 ---
 layout: default
 title: 8uurg's Page
-page: Home
+page: Projects
 ---
 <!--<div style="display: flex; align-items: center; justify-content: center; text-align: center; height: 100%; width: 100%">
 	<div style="font-size: 64px; font-family: Arial;">Nothing to see here. Yet.</div>
 </div>-->
 <div>
-	<ul id="posts">
-		{% for post in site.posts %}
-		{% include mainpost.html %}
+	<ul id="projects">
+		{% for project in site.data.projects %}
+		{% include itemproject.html %}
 		{% endfor %}
 	</ul>
 </div>

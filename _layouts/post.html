@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<h3 class="ui header attached top"><a class="ui" href="{{ page.url }}">{{ page.title }}</a></h3>
+<div class="ui segment attached">
+	{{ content }}
+</div>
+<div class="ui tertiary segment attached bottom">
+<i class="ui icon tags"></i>
+	{% for tag in page.tags %}
+	<div class="ui label">{{ tag }}</div>
+	{% endfor %}
+	<div style="float: right;">Posted at: {{ page.date }}</div>
+</div>

@@ -1,0 +1,9 @@
+- name: Home
+  icon: home
+  url: index.html
+- name: Archive
+  icon: archive
+  url: archive.html
+- name: Projects
+  icon: code
+  url: projects.html
