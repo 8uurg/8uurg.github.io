@@ -2,15 +2,22 @@
 layout: default
 ---
 
-<h3 class="page-heading">Last Post</h3>
-{% assign post = site.posts.first %}
-{% include post.html %}
+<div class="container">
+  {% assign post = site.posts.first %}
+  {% include post.html %}
 
-{% for post in site.posts offset:1 %}
-    {% assign currentdate = post.date | date: "%Y" %}
-    {% if currentdate != date %}
-      {% assign date = currentdate %}
-      <h4 class="styled">{{ date }}</h4>
-    {% endif %}
-    {% include post.html %}
-{% endfor %}
+  {% for post in site.posts offset:1 %}
+      {% include post.html %}
+  {% endfor %}
+</div>
+
+<div class="rightbar">
+  {% for post in site.posts %}
+      {% assign currentdate = post.date | date: "%Y" %}
+      {% if currentdate != date %}
+        {% assign date = currentdate %}
+        <h4 class="styled">{{ date }}</h4>
+      {% endif %}
+  	<a class="pure-menu-link" href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
+  {% endfor %}
+</div>

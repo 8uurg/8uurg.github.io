@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: lighter;
     margin: 0;
     padding: 0;
-    margin-top: 1rem;
+    padding-top: 1rem;
     padding-left: 1rem;
     margin-bottom: 0.4rem;
 }
@@ -57,7 +57,18 @@ a {
 
 .blog-post {
     position: relative;
-    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.blog-post::after {
+    content: "";
+    position: absolute;
+    background-color: #ccc;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
 }
 
 .post-header {
@@ -72,8 +83,7 @@ a {
 .post-metadata {
     padding: 0.5rem;
     font-size: 0.85em;
-    font-weight: bold;
-    color: rgb(100, 100, 100);
+    color: #999;
 }
 
 .post-title {
@@ -209,6 +219,20 @@ footer {
     padding: 1em 0.8em 0.8em 0.8em;
 }
 
+.container {
+    background-color: rgb(95.5%, 95.5%, 95.5%);
+    
+}
+
+html, body {
+    height: 100%;
+}
+
+.content, body > .pure-g {
+    min-height: 100%;
+}
+
+
 @media(min-width: 1000px) {
     .sidebar {
         position: fixed;
@@ -243,6 +267,18 @@ footer {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .container {
+        width: 60%;
+        min-height: 100%;
+    }
+
+    .rightbar {
+        position: absolute;
+        left: 70%;
+        right: 0;
+        top: 4em;
     }
 }
 
