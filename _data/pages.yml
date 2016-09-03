@@ -1,9 +1,9 @@
-- name: Home
-  icon: home
+- name: Blog
+  text: Blog
   url: index.html
-- name: Archive
-  icon: archive
-  url: archive.html
 - name: Projects
-  icon: code
+  text: Projects
   url: projects.html
+# - name: Experiments
+#   text: Experiments
+#   url: experiments.html

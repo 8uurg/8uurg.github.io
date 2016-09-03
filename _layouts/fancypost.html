@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<div class="hero" style="{% if page.background-url %}background-image: url('{{ page.background-url }}'); {% endif %}">
+    <div class="panel">
+        <h1 class="post-title">{{ page.title }}</h1><br/>
+        <h2 class="post-subtitle">Posted on {{ page.date | date: "%b %-d, %Y" }} by {{ page.by }}</h2>
+    </div>
+</div>
+<div class="post-content">
+{{ content }}
+</div>

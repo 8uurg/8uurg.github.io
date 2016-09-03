@@ -1,0 +1,15 @@
+<div>
+    <section class="blog-post">
+        <header class="post-header">
+            <div class="post-title">{{ post.title | escape }}</div>
+            <div class="post-metadata">
+                {% if post.by %} Written by {{post.by}} in {% endif %} {% for category in post.categories %}
+                <a class="aqua tag">{{category}}</a> {% endfor %}
+            </div>
+        </header>
+        <div class="post-excerpt">
+            {{post.excerpt}}
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read</a>
+        </div>
+    </section>
+</div>

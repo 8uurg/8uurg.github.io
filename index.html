@@ -1,15 +1,16 @@
 ---
 layout: default
-title: 8uurg's Page
-page: Home
 ---
-<!--<div style="display: flex; align-items: center; justify-content: center; text-align: center; height: 100%; width: 100%">
-	<div style="font-size: 64px; font-family: Arial;">Nothing to see here. Yet.</div>
-</div>-->
-<div>
-	<ul id="posts">
-		{% for post in site.posts %}
-		{% include mainpost.html %}
-		{% endfor %}
-	</ul>
-</div>
+
+<h3 class="page-heading">Last Post</h3>
+{% assign post = site.posts.first %}
+{% include post.html %}
+
+{% for post in site.posts offset:1 %}
+    {% assign currentdate = post.date | date: "%Y" %}
+    {% if currentdate != date %}
+      {% assign date = currentdate %}
+      <h4 class="styled">{{ date }}</h4>
+    {% endif %}
+    {% include post.html %}
+{% endfor %}
