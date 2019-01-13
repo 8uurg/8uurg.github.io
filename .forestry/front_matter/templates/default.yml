@@ -27,3 +27,5 @@ fields:
 - type: text
   name: background_url
   label: background url
+pages:
+- _posts/sampling.md
